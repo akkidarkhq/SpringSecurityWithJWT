@@ -27,6 +27,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.cors.CorsConfiguration;
+import java.util.Arrays;
 
 
 ///////////https://www.bezkoder.com/spring-boot-security-login-jwt/
@@ -73,7 +77,7 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http.csrf(csrf -> csrf.disable())
+    http.csrf(csrf -> csrf.disable()).cors(cors->corsConfigurationSource())
             .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
       .authorizeHttpRequests(
@@ -82,6 +86,7 @@ public class WebSecurityConfig {
                       .requestMatchers("/api/test/admin").hasRole("ADMIN")
                       .requestMatchers("/api/test/user").hasRole("USER")
                       .requestMatchers("/api/test/mod").hasRole("MODERATOR")
+                      .requestMatchers("/calc").hasRole("ADMIN")
                       .requestMatchers("api/test/**").permitAll()
               .requestMatchers("/api/auth/**").permitAll().anyRequest().authenticated()
       );
@@ -90,6 +95,21 @@ public class WebSecurityConfig {
     http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
     return http.build();
   }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000/"));
+        configuration.setAllowedMethods(Arrays.asList("*"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+
+        configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:3000/"));
+//        configuration.setAllowCredentials(true);
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+
 
 
 //  @Bean
