@@ -75,7 +75,7 @@ public class PersistenceJPAConfig {
 
        return DataSourceBuilder.create()
                .driverClassName("org.mariadb.jdbc.Driver")
-               .url("jdbc:mariadb://localhost:3307/testjwt?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true")
+               .url("jdbc:mariadb://localhost:3306/testjwt?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true")
                .username("root")
                .password("root").build();
 
