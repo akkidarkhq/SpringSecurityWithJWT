@@ -71,7 +71,6 @@ public class SeleniumTest {
 //        driver.quit();
 //    }
 
-
     //test without login. // text >>> Sorry you not logged in
 //    @Test
 //    public void testUnauthenticatedUser(){
