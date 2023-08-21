@@ -8,6 +8,7 @@ com\unoveo\springjwt\controller\TestController.class
 com\unoveo\springjwt\pages\Servlet.class
 com\unoveo\springjwt\securityconfig\WebMvcConfiguration.class
 com\unoveo\springjwt\payload\request\LoginRequest.class
+com\unoveo\calcUtils\Expression.class
 com\unoveo\springjwt\models\Role.class
 com\unoveo\springjwt\payload\request\SignupRequest.class
 com\unoveo\springjwt\security\services\UserDetailsServiceImpl.class
@@ -20,7 +21,7 @@ com\unoveo\springjwt\payload\response\MessageResponse.class
 com\unoveo\springjwt\persistence\PersistenceJPAConfig.class
 com\unoveo\springjwt\security\jwt\AuthTokenFilter.class
 com\unoveo\springjwt\securityconfig\IndexController.class
-com\unoveo\springjwt\pojos\Expression.class
 com\unoveo\springjwt\controller\AuthController.class
 com\unoveo\springjwt\securityconfig\ApplicationConfiguration.class
+com\unoveo\calcUtils\CalcUtils.class
 com\unoveo\springjwt\securityconfig\MvcWebApplicationInitializer.class
