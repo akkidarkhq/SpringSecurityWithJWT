@@ -9,13 +9,13 @@ pipeline {
             agent any
             
             steps {
-                echo 'hello Unoveo Ki Janta'
+                echo 'hello Unoveo '
             }
         }
 		
 		stage('Build') { 
             steps {
-                bat 'mvn clean compile package' 
+                bat 'mvn clean install ' 
             }
         }
     }
