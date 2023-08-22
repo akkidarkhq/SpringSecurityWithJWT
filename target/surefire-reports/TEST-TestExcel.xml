@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="TestExcel" time="0.992" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="TestExcel" time="0.881" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2023.1.4"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -61,7 +61,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="TestExcel" name="excelTest1" time="0.85"/>
-  <testcase classname="TestExcel" name="excelTest2" time="0.142"/>
+  <testcase classname="TestExcel" name="excelTest1" time="0.701"/>
+  <testcase classname="TestExcel" name="excelTest2" time="0.18"/>
   <testcase classname="TestExcel" name="testA" time="0"/>
 </testsuite>
